@@ -234,7 +234,6 @@ body {margin-top: 0px;margin-left: 0px;}
 <P class="p48 ft3">reHOOPerate. “NBA Neural Networks: Quantifying Playoff Performance by Number of Games Won and Seeding.” Medium, <NOBR>Re-HOOP*PER-Rate,</NOBR> 21 Aug. 2020, <NOBR>medium.com/re-hoop-per-rate/nba-neural-networks-</NOBR> <NOBR>quantifying-playoff-performance-by-number-of-games-</NOBR> <NOBR>won-and-seeding-9b8e9d2f6a55.</NOBR></P>
 </DIV>
 <DIV id="id3_2">
-<P class="p15 ft12">This HTML is created from PDF at <NOBR><A href="https://www.pdfonline.com/convert-pdf-to-html/">https://www.pdfonline.com/convert-pdf-to-html/</A></NOBR></P>
 </DIV>
 </DIV>
 </BODY>
