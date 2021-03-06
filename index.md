@@ -144,7 +144,6 @@ body {margin-top: 0px;margin-left: 0px;}
 <P class="p6 ft4">As is common with any sport, the NBA has a dense col- lection of data and statistics ranging from points scored all the way to the number of blocks, assists, and steals made by every player. The unpredictability of the NBA is very likely due to our inability to accurately quantify players and performance metrics on the ﬁeld. Through this project, we hope to understand which performance metrics and statistics are the major contributors to the overall game outcome.</P>
 <P class="p7 ft2">2. Problem Deﬁnition</P>
 <P class="p8 ft1">The overarching problem can be deﬁned as a decision tree and ranking problem.</P>
-<P class="p9 ft6"><SPAN class="ft5">*</SPAN>Equal contribution . Correspondence to: Pranav Putta &lt;pputta7@gatech.edu&gt;.</P>
 </DIV>
 <DIV id="id1_2_2">
 <P class="p10 ft1">2.1. Application of Decision Tree and Ranking</P>
