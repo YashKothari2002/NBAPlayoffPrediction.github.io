@@ -227,8 +227,5 @@ body {margin-top: 0px;margin-left: 0px;}
 <P class="p47 ft4">Hu, Feifang, and James V. Zidek. “Forecasting NBA Basket- ball Playoff Outcomes Using the Weighted Likelihood.” In- stitute of Mathematical Statistics Lecture Notes - Mono- graph Series A Festschrift for Herman Rubin, 2004, pp. <NOBR>385–395.,</NOBR> doi:10.1214/lnms/1196285406.</P>
 <P class="p48 ft3">reHOOPerate. “NBA Neural Networks: Quantifying Playoff Performance by Number of Games Won and Seeding.” Medium, <NOBR>Re-HOOP*PER-Rate,</NOBR> 21 Aug. 2020, <NOBR>medium.com/re-hoop-per-rate/nba-neural-networks-</NOBR> <NOBR>quantifying-playoff-performance-by-number-of-games-</NOBR> <NOBR>won-and-seeding-9b8e9d2f6a55.</NOBR></P>
 </DIV>
-<DIV id="id3_2">
-</DIV>
-</DIV>
 </BODY>
 </HTML>
