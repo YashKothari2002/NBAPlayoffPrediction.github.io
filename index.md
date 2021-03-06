@@ -172,7 +172,6 @@ body {margin-top: 0px;margin-left: 0px;}
 </DIV>
 </DIV>
 <DIV id="id1_4">
-<P class="p15 ft12">This HTML is created from PDF at <NOBR><A href="https://www.pdfonline.com/convert-pdf-to-html/">https://www.pdfonline.com/convert-pdf-to-html/</A></NOBR></P>
 </DIV>
 </DIV>
 <DIV id="page_2">
@@ -216,8 +215,6 @@ body {margin-top: 0px;margin-left: 0px;}
 </DIV>
 </DIV>
 <DIV id="id2_3">
-<P class="p15 ft12">This HTML is created from PDF at <NOBR><A href="https://www.pdfonline.com/convert-pdf-to-html/">https://www.pdfonline.com/convert-pdf-to-html/</A></NOBR></P>
-</DIV>
 </DIV>
 <DIV id="page_3">
 <DIV id="p3dimg1">
