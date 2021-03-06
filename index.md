@@ -20,7 +20,6 @@ body {margin-top: 0px;margin-left: 0px;}
 #page_1 #id1_3 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 648px;overflow: hidden;}
 #page_1 #id1_3 #id1_3_1 {float:left;border:none;margin: 10px 0px 0px 0px;padding: 0px;border:none;width: 314px;overflow: hidden;}
 #page_1 #id1_3 #id1_3_2 {float:left;border:none;margin: 0px 0px 0px 22px;padding: 0px;border:none;width: 312px;overflow: hidden;}
-#page_1 #id1_4 {border:none;margin: 73px 0px 0px 198px;padding: 0px;border:none;width: 544px;overflow: hidden;}
 
 #page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:648px;height:777px;}
 #page_1 #p1dimg1 #p1img1 {width:648px;height:777px;}
