@@ -1,0 +1,31 @@
+,Team,Predicted Wins,True Wins,Games Played,Error
+1,MIL Bucks,82,68,92,20.6%
+2,GSW Warriors,104,75,110,38.7%
+3,PHI 76ers,52,59,96,-11.9%
+4,DEN Nuggets,55,62,94,-11.3%
+5,BOS Celtics,87,61,103,42.6%
+6,TOR Raptors,89,66,97,34.8%
+7,SAS Spurs,72,54,94,33.3%
+8,HOU Rockets,30,66,104,-54.5%
+9,LAC Clippers,62,53,91,17.0%
+10,POR Trail Blazers,67,60,93,11.7%
+11,UTA Jazz,49,55,94,-10.9%
+12,OKC Thunder,55,53,91,3.8%
+13,BKN Nets,32,45,91,-28.9%
+14,ORL Magic,51,44,91,15.9%
+15,IND Pacers,60,50,90,20.0%
+16,DET Pistons,19,43,91,-55.8%
+17,MEM Grizzlies,11,35,87,-68.6%
+18,CHA Hornets,41,43,87,-4.7%
+19,MIA Heat,28,42,88,-33.3%
+20,NYK Knicks,8,20,87,-60.0%
+21,DAL Mavericks,20,34,85,-41.2%
+22,NOP Pelicans,68,34,91,100.0%
+23,LAL Lakers,51,40,88,27.5%
+24,MIN Timberwolves,26,37,87,-29.7%
+25,PHX Suns,8,20,86,-60.0%
+26,SAC Kings,54,40,87,35.0%
+27,CHI Bulls,14,24,87,-41.7%
+28,ATL Hawks,16,31,87,-48.4%
+29,WAS Wizards,57,35,86,62.9%
+30,CLE Cavaliers,10,29,101,-65.5%
