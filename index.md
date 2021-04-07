@@ -1,231 +1,365 @@
+<html>
+<head>
+<title>LaTeX4Web 1.4 OUTPUT</title>
+<style type="text/css">
+<!--
+ body {color: black;  background-color:#FFCC99;  }
+ div.p { margin-top: 7pt;}
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.norm {line-height:normal;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td.sqrt {border-top:2 solid black;
+          border-left:2 solid black;
+          border-bottom:none;
+          border-right:none;}
+ table.sqrt {border-top:2 solid black;
+             border-left:2 solid black;
+             border-bottom:none;
+             border-right:none;}
+-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-latin-1"/>
+</head>
+<body>
 
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>CS_4641_Group_Project</TITLE>
-<META name="generator" content="BCL easyConverter SDK 5.0.241">
-<META name="author" content="Ekisha Basu, Connor Caldwell, Yash Kothari, Pranav Putta, Lakshman Ravoori">
-<META name="title" content="Predicting NBA Playoffs Ranked Bracket ">
-<META name="subject" content="Proceedings of the International Conference on Machine Learning 2020">
-<META name="keywords" content="Machine Learning, ICML">
-<STYLE type="text/css">
+\documentclassarticle
 
-body {margin-top: 0px;margin-left: 0px;}
+\usepackagemicrotype
+\usepackagegraphicx
+\usepackagesubfigure
+\usepackagebooktabs 
+\usepackagehyperref
 
-#page_1 {position:relative; overflow: hidden;margin: 96px 0px 12px 74px;padding: 0px;border: none;width: 742px;}
-#page_1 #id1_1 {border:none;margin: 19px 0px 0px 91px;padding: 0px;border:none;width: 651px;overflow: hidden;}
-#page_1 #id1_2 {border:none;margin: 25px 0px 0px 0px;padding: 0px;border:none;width: 742px;overflow: hidden;}
-#page_1 #id1_2 #id1_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 334px;overflow: hidden;}
-#page_1 #id1_2 #id1_2_2 {float:left;border:none;margin: 3px 0px 0px 0px;padding: 0px;border:none;width: 408px;overflow: hidden;}
-#page_1 #id1_3 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 648px;overflow: hidden;}
-#page_1 #id1_3 #id1_3_1 {float:left;border:none;margin: 10px 0px 0px 0px;padding: 0px;border:none;width: 314px;overflow: hidden;}
-#page_1 #id1_3 #id1_3_2 {float:left;border:none;margin: 0px 0px 0px 22px;padding: 0px;border:none;width: 312px;overflow: hidden;}
+\newcommand\theHalgorithm\arabicalgorithm
 
-#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:648px;height:777px;}
-#page_1 #p1dimg1 #p1img1 {width:648px;height:777px;}
-
-
-
-
-#page_2 {position:relative; overflow: hidden;margin: 61px 0px 12px 73px;padding: 0px;border: none;width: 743px;}
-#page_2 #id2_1 {border:none;margin: 0px 0px 0px 215px;padding: 0px;border:none;width: 528px;overflow: hidden;}
-#page_2 #id2_2 {border:none;margin: 14px 0px 0px 0px;padding: 0px;border:none;width: 743px;overflow: hidden;}
-#page_2 #id2_2 #id2_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 336px;overflow: hidden;}
-#page_2 #id2_2 #id2_2_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 407px;overflow: hidden;}
-#page_2 #id2_3 {border:none;margin: 75px 0px 0px 199px;padding: 0px;border:none;width: 544px;overflow: hidden;}
-
-#page_2 #p2dimg1 {position:absolute;top:15px;left:1px;z-index:-1;width:648px;height:607px;}
-#page_2 #p2dimg1 #p2img1 {width:648px;height:607px;}
+\usepackage[accepted]styles/icml2020
 
 
+<font face=symbol>i</font>cmltitlerunningPredicting the ranked NBA playoff bracket
+\begindocument
 
-
-#page_3 {position:relative; overflow: hidden;margin: 61px 0px 12px 0px;padding: 0px;border: none;width: 816px;}
-#page_3 #id3_1 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 816px;overflow: hidden;}
-#page_3 #id3_2 {border:none;margin: 606px 0px 0px 272px;padding: 0px;border:none;width: 544px;overflow: hidden;}
-
-#page_3 #p3dimg1 {position:absolute;top:15px;left:74px;z-index:-1;width:648px;height:1px;font-size: 1px;line-height:nHeight;}
-#page_3 #p3dimg1 #p3img1 {width:648px;height:1px;}
+\twocolumn[
+<font face=symbol>i</font>cmltitlePredicting NBA Playoffs Ranked Bracket 
 
 
 
 
-.dclr {clear:both;float:none;height:1px;margin:0px;padding:0px;overflow:hidden;}
+\beginicmlauthorlist
+<font face=symbol>i</font>cmlauthorEkisha Basu
+<font face=symbol>i</font>cmlauthorConnor Caldwell
+<font face=symbol>i</font>cmlauthorYash Kothari
+<font face=symbol>i</font>cmlauthorPranav Putta
+<font face=symbol>i</font>cmlauthorLakshman Ravoori
+\endicmlauthorlist
 
-.ft0{font: 19px 'Arial';line-height: 22px;}
-.ft1{font: 13px 'Arial';line-height: 16px;}
-.ft2{font: 16px 'Arial';line-height: 18px;}
-.ft3{font: 12px 'Arial';line-height: 16px;}
-.ft4{font: 11px 'Arial';line-height: 16px;}
-.ft5{font: 8px 'Arial';line-height: 10px;}
-.ft6{font: 12px 'Arial';line-height: 15px;}
-.ft7{font: 9px 'Arial';line-height: 12px;position: relative; bottom: -1px;}
-.ft8{font: 11px 'Arial';line-height: 14px;}
-.ft9{font: 13px 'Arial';margin-left: 4px;line-height: 16px;}
-.ft10{font: 13px 'Arial';margin-left: 5px;line-height: 16px;}
-.ft11{font: 8px 'Arial';line-height: 10px;position: relative; bottom: 5px;}
-.ft12{font: 8px 'Calibri';line-height: 10px;}
-.ft13{font: 11px 'Arial';line-height: 17px;}
+<font face=symbol>i</font>cmlcorrespondingauthorPranav Puttapputta7@gatech.edu
 
-.p0{text-align: left;padding-left: 64px;margin-top: 0px;margin-bottom: 0px;}
-.p1{text-align: left;margin-top: 48px;margin-bottom: 0px;}
-.p2{text-align: left;padding-left: 126px;margin-top: 0px;margin-bottom: 0px;}
-.p3{text-align: justify;padding-left: 26px;padding-right: 42px;margin-top: 34px;margin-bottom: 0px;}
-.p4{text-align: left;margin-top: 55px;margin-bottom: 0px;}
-.p5{text-align: justify;padding-right: 18px;margin-top: 11px;margin-bottom: 0px;}
-.p6{text-align: justify;padding-right: 18px;margin-top: 23px;margin-bottom: 0px;}
-.p7{text-align: left;margin-top: 19px;margin-bottom: 0px;}
-.p8{text-align: left;padding-right: 22px;margin-top: 11px;margin-bottom: 0px;}
-.p9{text-align: left;padding-right: 22px;margin-top: 10px;margin-bottom: 0px;text-indent: 13px;}
-.p10{text-align: left;padding-left: 2px;margin-top: 0px;margin-bottom: 0px;}
-.p11{text-align: justify;padding-left: 1px;padding-right: 92px;margin-top: 9px;margin-bottom: 0px;text-indent: 1px;}
-.p12{text-align: left;padding-left: 2px;margin-top: 17px;margin-bottom: 0px;}
-.p13{text-align: justify;padding-left: 2px;padding-right: 87px;margin-top: 9px;margin-bottom: 0px;}
-.p14{text-align: left;margin-top: 12px;margin-bottom: 0px;}
-.p15{text-align: left;margin-top: 0px;margin-bottom: 0px;}
-.p16{text-align: justify;padding-left: 2px;padding-right: 94px;margin-top: 0px;margin-bottom: 0px;}
-.p17{text-align: left;padding-left: 2px;margin-top: 14px;margin-bottom: 0px;}
-.p18{text-align: justify;padding-left: 2px;padding-right: 94px;margin-top: 9px;margin-bottom: 0px;}
-.p19{text-align: left;padding-left: 2px;padding-right: 92px;margin-top: 10px;margin-bottom: 0px;}
-.p20{text-align: left;padding-left: 2px;padding-right: 92px;margin-top: 0px;margin-bottom: 0px;}
-.p21{text-align: left;padding-left: 2px;margin-top: 18px;margin-bottom: 0px;}
-.p22{text-align: justify;margin-top: 0px;margin-bottom: 0px;}
-.p23{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;}
-.p24{text-align: justify;padding-left: 1px;padding-right: 23px;margin-top: 9px;margin-bottom: 0px;}
-.p25{text-align: left;padding-left: 1px;margin-top: 17px;margin-bottom: 0px;}
-.p26{text-align: justify;padding-left: 1px;padding-right: 23px;margin-top: 10px;margin-bottom: 0px;}
-.p27{text-align: left;padding-left: 1px;margin-top: 16px;margin-bottom: 0px;}
-.p28{text-align: justify;padding-right: 23px;margin-top: 10px;margin-bottom: 0px;}
-.p29{text-align: left;padding-left: 1px;margin-top: 15px;margin-bottom: 0px;}
-.p30{text-align: left;padding-left: 69px;margin-top: 154px;margin-bottom: 0px;}
-.p31{text-align: justify;padding-left: 1px;padding-right: 21px;margin-top: 18px;margin-bottom: 0px;}
-.p32{text-align: left;padding-left: 1px;padding-right: 23px;margin-top: 9px;margin-bottom: 0px;}
-.p33{text-align: left;padding-left: 1px;padding-right: 19px;margin-top: 9px;margin-bottom: 0px;}
-.p34{text-align: left;padding-left: 1px;padding-right: 94px;margin-top: 0px;margin-bottom: 0px;}
-.p35{text-align: justify;padding-left: 1px;padding-right: 94px;margin-top: 9px;margin-bottom: 0px;}
-.p36{text-align: justify;padding-left: 1px;padding-right: 89px;margin-top: 9px;margin-bottom: 0px;}
-.p37{text-align: left;padding-left: 1px;margin-top: 19px;margin-bottom: 0px;}
-.p38{text-align: left;padding-left: 1px;margin-top: 10px;margin-bottom: 0px;}
-.p39{text-align: justify;padding-right: 88px;margin-top: 10px;margin-bottom: 0px;}
-.p40{text-align: left;padding-left: 58px;margin-top: 168px;margin-bottom: 0px;}
-.p41{text-align: left;padding-left: 1px;margin-top: 42px;margin-bottom: 0px;}
-.p42{text-align: justify;padding-left: 1px;padding-right: 87px;margin-top: 9px;margin-bottom: 0px;}
-.p43{text-align: right;padding-right: 308px;margin-top: 0px;margin-bottom: 0px;}
-.p44{text-align: left;padding-left: 74px;margin-top: 11px;margin-bottom: 0px;}
-.p45{text-align: justify;padding-left: 73px;padding-right: 423px;margin-top: 11px;margin-bottom: 0px;text-indent: 1px;}
-.p46{text-align: justify;padding-left: 74px;padding-right: 428px;margin-top: 8px;margin-bottom: 0px;}
-.p47{text-align: justify;padding-left: 74px;padding-right: 423px;margin-top: 8px;margin-bottom: 0px;}
-.p48{text-align: left;padding-left: 73px;padding-right: 423px;margin-top: 8px;margin-bottom: 0px;}
+<font face=symbol>i</font>cmlkeywordsMachine Learning, ICML
+
+\vskip 0.3in
+]
 
 
 
+Phys.Rev. intAffiliationsAndNotice<font face=symbol>i</font>cmlEqualContribution 
+\beginabstract
+This project aims to use a deep neural network to predict the NBA playoffs<font face=symbol>¢</font> ranked bracket. The model will be tested against 2 baselines (gradient boosting and a randomized algorithm). The majority of previous approaches to NBA predictions have been focused on generating the playoff spread. This project differentiates itself by focusing on the ranked bracket for the playoffs. At the end of this project, we aim to be able to predict the ranked bracket for the 2021 playoffs. \endabstract
 
-</STYLE>
-</HEAD>
-
-<BODY>
-<DIV id="page_1">
-<DIV id="p1dimg1">
-<IMG src="data:image/jpg;base64,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KAOf/wCEN0v/AJ+tc/8AB7e//HqP+EN0v/n61z/we3v/AMeroKKAOf8A+EN0v/n61z/we3v/AMeo/wCEN0v/AJ+tc/8AB7e//Hq6CigDn/8AhDdL/wCfrXP/AAe3v/x6j/hDdL/5+tc/8Ht7/wDHq6CigDn/APhDdL/5+tc/8Ht7/wDHqP8AhDdL/wCfrXP/AAe3v/x6ugooA5//AIQ3S/8An61z/wAHt7/8eo/4Q3S/+frXP/B7e/8Ax6ugooA5/wD4Q3S/+frXP/B7e/8Ax6j/AIQ3S/8An61z/wAHt7/8eroKKAOf/wCEN0v/AJ+tc/8AB7e//HqP+EN0v/n61z/we3v/AMeroKKAOf8A+EN0v/n61z/we3v/AMeo/wCEN0v/AJ+tc/8AB7e//Hq6CigDn/8AhDdL/wCfrXP/AAe3v/x6j/hDdL/5+tc/8Ht7/wDHq6CigDn/APhDdL/5+tc/8Ht7/wDHqK6CigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4mj/AIQTwf8A9Cpof/guh/8Aia6CigDn/wDhBPB//QqaH/4Lof8A4miugooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAor4AooA+/6K+AKKAPv+ivgCigD7/or4AooA+/6K+AK9g/Zx/5KHqH/YKk/wDRsVAH0/RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH//2Q==" id="p1img1"></DIV>
+<p><a name="toc.1"><h1>1&nbsp;Introduction</h1>
+<a name="refsubmission">
 
 
-<DIV class="dclr"></DIV>
-<DIV id="id1_1">
-<P class="p0 ft0">Predicting NBA Playoffs Ranked Bracket</P>
-<P class="p1 ft1">Ekisha Basu Connor Caldwell Yash Kothari Pranav Putta Lakshman Ravoori</P>
-</DIV>
-<DIV id="id1_2">
-<DIV id="id1_2_1">
-<P class="p2 ft2">Abstract</P>
-<P class="p3 ft3">This project aims to use a deep neural network to predict the NBA playoffs’ ranked bracket. The model will be tested against 2 baselines (Ran- dom Forest and Logistic Classiﬁer). The majority of previous approaches to NBA predictions have been focused on generating the playoff spread. This project differentiates itself by focusing on the ranked bracket for the playoffs. At the end of this project, we aim to be able to predict the ranked bracket for the 2021 playoffs.</P>
-<P class="p4 ft2">1. Introduction</P>
-<P class="p5 ft4">The NBA is one of the top grossing sports in the United States, bringing in over $8 billion in revenue per year. As such, sports betting is a prominent aspect of American cul- ture that engages millions of people nationwide. Engineer- ing a prediction algorithm that can reliably produce insights about the outcomes of games would be of signiﬁcance to consumers, the NBA franchise and opposition team analysis, as well as the gambling industry.</P>
-<P class="p6 ft4">As is common with any sport, the NBA has a dense col- lection of data and statistics ranging from points scored all the way to the number of blocks, assists, and steals made by every player. The unpredictability of the NBA is very likely due to our inability to accurately quantify players and performance metrics on the ﬁeld. Through this project, we hope to understand which performance metrics and statistics are the major contributors to the overall game outcome.</P>
-<P class="p7 ft2">2. Problem Deﬁnition</P>
-<P class="p8 ft1">The overarching problem can be deﬁned as a decision tree and ranking problem.</P>
-</DIV>
-<DIV id="id1_2_2">
-<P class="p10 ft1">2.1. Application of Decision Tree and Ranking</P>
-<P class="p11 ft1">Each individual basketball game over the course of an NBA season can be represented as a decision tree. There are ’N’ number of input features - counting statistics - that can be traversed over to eventually reach a binary outcome - Win for Team A or Win for Team B. Taking the sum over all results over a season for an arbitrary team ’A’, we can then ”rank” teams in order of the number of total wins they accumulate.</P>
-<P class="p12 ft1">2.2. Input Space</P>
-<P class="p13 ft3">Basketball statistics data will be pulled from basketball- reference.com and espn.com/basketball/stats. Unique dataset will be created after performing statistical analy- sis of correlation between various stats and the impact on team win. Final dataset will be <NOBR>pre-processed</NOBR> using PCA and <NOBR>mean-centering</NOBR> to reduce dimensionality.</P>
-<P class="p12 ft1">2.3. Output Space</P>
-<P class="p14 ft1">(x1; x2; x3; x4; x5; x6; x7; x8)</P>
-<P class="p15 ft1">(x1<SPAN class="ft7">A</SPAN>; x2<SPAN class="ft7">A</SPAN>; x3<SPAN class="ft7">A</SPAN>; x4<SPAN class="ft7">A</SPAN>; x5<SPAN class="ft7">A</SPAN>; x6<SPAN class="ft7">A</SPAN>; x7<SPAN class="ft7">a</SPAN>; x8<SPAN class="ft7">A</SPAN>)</P>
-<P class="p16 ft1">2x8 Dimensional Matrix - ranked from <NOBR>x1-x8</NOBR> for each conference (east and west)</P>
-<P class="p17 ft1">2.4. Baseline 2: Logistic Classiﬁcation</P>
-<P class="p18 ft1">The probability of a team’s win or loss is expressed as a linear combination of input parameters. The classiﬁcation categories are a binary option of win for ’team A’ or a win for ’team B.’ The teams will then be ranked by the sum of their wins.</P>
-<P class="p12 ft1">2.5. Assumptions</P>
-<P class="p19 ft1"><SPAN class="ft8">a.</SPAN><SPAN class="ft9">Team win percentage is based solely on individual perfor- mances and quantiﬁable statistics</SPAN></P>
-<P class="p20 ft1"><SPAN class="ft6">b.</SPAN><SPAN class="ft10">Injuries to players unaccounted for </SPAN><NOBR>(pre-season</NOBR> predic- tions)</P>
-<P class="p21 ft2">3. Methods</P>
-</DIV>
-</DIV>
-<DIV id="id1_3">
-<DIV id="id1_3_1">
-<P class="p22 ft6">Proceedings of the 37 <SPAN class="ft11">th </SPAN>International Conference on Machine Learning, Online, PMLR 119, 2020. Copyright 2020 by the au- thor(s).</P>
-</DIV>
-<DIV id="id1_3_2">
-<P class="p15 ft1">We plan to use two baseline models to compare against our own model.</P>
-</DIV>
-</DIV>
-<DIV id="id1_4">
-</DIV>
-</DIV>
-<DIV id="page_2">
-<DIV id="p2dimg1">
-<IMG src="data:image/jpg;base64,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KAOf/wCEN0v/AJ+tc/8AB7e//HqP+EN0v/n61z/we3v/AMeroKKAOf8A+EN0v/n61z/we3v/AMeo/wCEN0v/AJ+tc/8AB7e//Hq6CigDn/8AhDdL/wCfrXP/AAe3v/x6j/hDdL/5+tc/8Ht7/wDHq6CigDn/APhDdL/5+tc/8Ht7/wDHqP8AhDdL/wCfrXP/AAe3v/x6ugooA5//AIQ3S/8An61z/wAHt7/8eo/4Q3S/+frXP/B7e/8Ax6ugooA5/wD4Q3S/+frXP/B7e/8Ax6j/AIQ3S/8An61z/wAHt7/8eroKKAOf/wCEN0v/AJ+tc/8AB7e//HqP+EN0v/n61z/we3v/AMeroKKAOf8A+EN0v/n61z/we3v/AMeo/wCEN0v/AJ+tc/8AB7e//Hq6CigDn/8AhDdL/wCfrXP/AAe3v/x6j/hDdL/5+tc/8Ht7/wDHq6CigDn/APhDdL/5+tc/8Ht7/wDHqK6CigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqJ7q3jco88SsCAQXAIJ6VHeMSIYAJcTybGeP+ABSxyewO3bnr8wxg1iW+tsEeHT/CWpSWtvK9ujQm0RD5bGM7Q0wIGVOMgcdqAN37ba4z9phxjOfMHTOM/nxR9stf+fmHuP8AWDt1rH/tq/8A+hO1j/v5Zf8Ax+j+27//AKE7WP8Av5Zf/H6ANgXtqelzCeQP9YOp6UgvrQgkXUGAMk+YOnSsj+27/wD6E7WP+/ll/wDH6r33iefTdPub668I6xHbW0TTSvvsztRRuJwJ8ngUAdD9stf+fmHuPvjt1/KgXlqelzCeQPvjqen51R+33H/QAvv++rf/AOOUfb7j/oAX3/fVv/8AHKALovrQgkXUOAMk+YOmcfzo+2WuSPtMORnI8wdutUvt0/8A0AL7/vq3/wDjlH264/6AF9/31b//ABygC6L21LBRcwknGB5g5z0pPt1njP2uDGM/6wVT+3XH/QAvv++rf/45R9un/wCgBe/99W//AMcoAum9tFJBuoQQSOZB1HWnx3EMrFY5o3IGSFYHisltbgi1OxsLvT5rWa+d0g854TuKoXbhXJ6L1A7j1rSurG2vIGhnhVkODxwVI6EEcgg8gjkEAigCxRVLSrhriwBdmZo5JIC7EEuY3ZNxwAMnbnAAxnFXaACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAKN+VF5peQpJumxuzkHyZOmO/14xnviq/hz/kGTf9f95/6Uy1avWYXWnAMwBuCCBIFyPKk6j+L6fj2qj4duIV02cGaMEX95kFh/z8y0AbVFYh1pdRupYNJv7IC15uZpUMig7nTYMMvzBo2zk8YHBzkWrDU1n+0wXLwpdWkvkzBWIUnargjPqrqcc4JIycZIBo1h+IbdtYtLzRGLx2k9nILqSMAyMjArsjyNu485Jzjjj5srr/aYP+e8f/fYrmPF+u6bY2dwYL+GLXIbZjZsGBMXmBlDsDwYgU3vnKgR7j0FAGtpFx5U8mklvMFrbQSxyiMJujfeqggYAYGNs4AGCMAdK1qxPDurabqujw6payuBdjc5uQUk3D5SCpPy4IPA49Ouanu9RWe8j0ywu4Rdtteba4Lwwnf84U5zkoVHYE55xggGpVbUL2PTdNur6ZXaK2heZ1QAsQoJIGcc8Vli0tHvZVsL6+S9PmMsj3E0sIYMNw2M2wgEgEDpyAVI4g1/Uopfh/qtzcFIJDpkzSxFwTG3ltuX3wcigDe8+T/n1m/NP/iqiubu4htZpYdOnnlRGZIg6KXYDhclsDPSpVu7ZlDLcREE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" id="p2img1"></DIV>
+The NBA is one of the top grossing sports in the United States, bringing in over \8 billion in revenue per year. As such, sports betting is a prominent aspect of American culture that engages millions of people nationwide.
+Engineering a prediction algorithm that can reliably produce insights about the outcomes of games would be of significance to consumers, the NBA franchise, opposition team analysis, and the gambling industry.
+
+As is common with any sport, the NBA has a dense collection of data and statistics ranging from points scored all the way to the number of blocks, assists, and steals made by every player. The unpredictability of the NBA is very likely due to our inability to accurately quantify players and performance metrics on the field. Through this project, we hope to understand which performance metrics and statistics are the major contributors to the overall game outcome.
+<p><a name="toc.2"><h1>2&nbsp;Problem Definition</h1>
+The overarching problem can be defined as a decision tree and ranking problem.
+<p><a name="toc.2.1"><h2>2.1&nbsp;Application of Decision Tree and Ranking</h2>
+Each individual basketball game over the course of an NBA season can be represented as a decision tree. There are <font face=symbol>¢</font>N<font face=symbol>¢</font> number of input features <font face=symbol>-</font> counting statistics <font face=symbol>-</font> that can be traversed over to eventually reach a binary outcome <font face=symbol>-</font> Win for Team A or Win for Team B. Taking the sum over all results over a season for an arbitrary team <font face=symbol>¢</font>A<font face=symbol>¢</font>, we can then "rank" teams in order of the number of total wins they accumulate. 
+<p><a name="toc.2.2"><h2>2.2&nbsp;Input Space</h2>
+Basketball statistics data will be pulled from basketball<font face=symbol>-</font>reference.com and espn.com/basketball/stats. Unique dataset will be created after performing statistical analysis of correlation between various stats and the impact on team win. Final dataset will be pre<font face=symbol>-</font>processed using principal component analysis (PCA) and mean<font face=symbol>-</font>centering to reduce dimensionality. 
+<p><a name="toc.2.3"><h2>2.3&nbsp;Output Space</h2>
+(x1, x2, x3, x4, x5, x6, x7, x8)
+(x1_A,x2_A,x3_A,x4_A,x5_A,x6_A,x7_a,x8_A)  \newline
+2x8 Dimensional Matrix <font face=symbol>-</font> ranked from x1<font face=symbol>-</font>x8 for each conference (east and west)
+<p><a name="toc.2.4"><h2>2.4&nbsp;Assumptions</h2>
+a. Team win percentage is based solely on individual performances and quantifiable statistics \newline
+b. Injuries to players unaccounted for (pre<font face=symbol>-</font>season predictions)
+
+<p><a name="toc.3"><h1>3&nbsp;Data</h1>
+<p><a name="toc.3.1"><h2>3.1&nbsp;Collection</h2>
+To acquire the data, we decided to use data from ESPN and Basketball Reference. ESPN is a popular cable sports channel and Basketball Reference is one of the most popular databases for NBA history. As both of these sources are known to be reputable, we felt quite comfortable using them. Using Beautiful Soup python library we decided to webscrape NBA Regular Season Team Statistics and the NBA Playoffs Team Stats from the past 19 seasons (2001<font face=symbol>-</font>2002 season to the 2019<font face=symbol>-</font>2020 season). Novelty lies in combining the most impactful statistics on game results from multiple sources.
+
+The data provided team statistics such as 3<font face=symbol>-</font>point percentage, free<font face=symbol>-</font>through percentage, points, assists, steals, etc for each season.
+
+<p><a name="toc.3.2"><h2>3.2&nbsp;ANOVA (Analysis of Variance) Coefficient Analysis</h2>
+The following table provides a small sample of the statistical analysis done on the input space to narrow down the set of all basketball statistics into an input space of meaningful (statistically significant) data that can be used to train a model for win prediction.
+
+\begincenter
+ \begintabular||c c c|| 
+ \hline
+ Feature Name & F<font face=symbol>-</font>test & Feature Selected<br>
+ [0.5ex] 
+ \hline\hline
+ 3pt \% & 13.47 & YES <br>
+ 
+ \hline
+ EFG \% & 18.36 & YES<br>
+
+ \hline
+ PTS & 12.20 & YES<br>
+
+ \hline
+ FT \% & 12.33 & YES<br>
+
+ \hline
+ FGM & 2.17 & NO<br>
+
+ \hline
+ MP & 0.05 & NO<br>
+
+ \hline
+ TO & 10.13<sup>*</sup> & YES<br>
+
+ \hline
+\endtabular
+\endcenter
+We see that there is a F<font face=symbol>-</font>test metric as well as a YES or NO binary classification for whether a feature was selected for our training (input) space or not. There is a way to threshold this F<font face=symbol>-</font>metric to either accept (take) or reject (not take) the null hypothesis from the ANOVA test. 
+
+Rejecting the null hypothesis indicates that variance exists between the two groups which, for this paper, are the feature (group 1) and the result of the game (group 2). A value of the F<font face=symbol>-</font>test above a given threshold means that we would reject the null hypothesis for that particular feature and hence make it a part of the data<font face=symbol>-</font>set that we use to train the model. This threshold is taken from the F<font face=symbol>-</font>table, which is based on the feature space, degrees of freedom, etc. We have taken our threshold as 4.23 (derived from the F<font face=symbol>-</font>table directly). 
+
+<p><a name="toc.3.3"><h2>3.3&nbsp;Feature Importance from Gradient Boosting Model</h2>
+The first trained version of our gradient boosting algorithm was trained on the entire dataset that we scraped. The reason behind this was to allow us to utilize \textittensorflow<font face=symbol>¢</font>s provided feature importance ranking from the gradient boosting model itself. We felt that taking this into consideration along with our own independent statistical analysis might be a good way of double<font face=symbol>-</font>verifying the importance of any given feature \textitx.
+\beginfigure[htp]
+    \centering
+     <font face=symbol>Î</font> cludegraphics[width=8cm]Screen Shot 2021<font face=symbol>-</font>04<font face=symbol>-</font>06 at 10.36.54 PM.jpeg
+    <font face=symbol>Ç</font>tionSample Feature Importance Chart from our Gradient Boosting Model
+    <a name="reffig:meminmem">
+
+\endfigure
+
+From the above, we see the contribution of different features to the predicted probability (of a win) for a given team \textitA. This allows us to rank features by their importance in terms of the model<font face=symbol>¢</font>s predictions. One important note to be taken with this is that the model has not seen a smaller subset of the data, therefore, it has not had the chance to learn on smaller subsets at this point. This means that it cannot determine whether when given different data, its predictions might be better. Hence, these rankings are weighted less than the ANOVA analysis that has been done independently by our research group. 
+<p><a name="toc.4"><h1>4&nbsp;Methods</h1>
+We plan to use two baseline models to compare against our own model.
+
+<p><a name="toc.4.1"><h2>4.1&nbsp;Baseline 1: Randomized Algorithm</h2>
+Since rank prediction is quite a difficult and different task than simply predicting the outcomes of games, we wanted to use a completely randomized algorithm to demonstrate the significance of our results through our deep learning model.
+
+This randomized algorithm simulated each game during a season and randomly selected the outcome from a uniform probability distribution. After creating a prediction for the outcome of each game, a ranked matrix was constructed, ordered by each team<font face=symbol>¢</font>s percentage of wins for the season.
 
 
-<DIV id="id2_1">
-<P class="p15 ft6">Predicting the ranked NBA playoff bracket</P>
-</DIV>
-<DIV id="id2_2">
-<DIV id="id2_2_1">
-<P class="p23 ft1">3.1. Baseline 1: Random Forest Model</P>
-<P class="p24 ft1">The team’s rank will be classiﬁed via the random forest model. This works by traversing through a <NOBR>pseudo-random</NOBR> decision tree to ﬁnd game outcomes via a sequence of input parameters.</P>
-<P class="p25 ft1">3.2. Baseline 2: Logistic Classiﬁcation</P>
-<P class="p26 ft1">The probability of a team’s win or loss is expressed as a linear combination of input parameters. The classiﬁcation categories are a binary option of win for ’team A’ or a win for ’team B.’ The teams will then be ranked by the sum of their wins.</P>
-<P class="p27 ft1">3.3. Our Model: Feedforward Deep Neural Network</P>
-<P class="p28 ft1">The team’s rank will be classiﬁed via a feedforward deep neural network (DNN). The model will have 6 to 8 layers and consist of various layer types. Memory is important as we will need to remember each individual game prediciton and use it to base future predictions.</P>
-<P class="p29 ft8"><SPAN class="ft1">3.3.1.</SPAN><SPAN class="ft9">A</SPAN>RCHITECTURE OF <SPAN class="ft1">M</SPAN>EMORY</P>
-<P class="p30 ft6">Figure 1. Memory in Memory Block</P>
-<P class="p31 ft1">Instead of using a standard ST/LSTM unit, we will use a memory in memory unit, better for spatiotemporal pre- dictions (our individual game predictions will need to be recorded based on both prediction space as well as time of prediciton)</P>
-<P class="p25 ft1">3.4. Performance Metrics/Loss Functions</P>
-<P class="p28 ft1">Recurrent unit is required within the deep neural network architecture for feedback from memory. Loss functions used will be <NOBR>two-fold:</NOBR></P>
-<P class="p29 ft8"><SPAN class="ft1">3.4.1.</SPAN><NOBR><SPAN class="ft9">M</SPAN>EAN<SPAN class="ft1">-S</SPAN>QUARED</NOBR> <SPAN class="ft1">E</SPAN>RROR <SPAN class="ft1">(MSE)</SPAN></P>
-<P class="p32 ft1">Distance between our predicted outcome of a game and the ground truth of the actual result</P>
-<P class="p29 ft8"><SPAN class="ft1">3.4.2.</SPAN><SPAN class="ft9">M</SPAN>EAN <SPAN class="ft1">A</SPAN>VERAGE <SPAN class="ft1">E</SPAN>RROR <SPAN class="ft1">(MAE)</SPAN></P>
-<P class="p33 ft13">Generally used as a variant of an error function for clas- siﬁcation/regression problems. This has been used by our</P>
-</DIV>
-<DIV id="id2_2_2">
-<P class="p34 ft1">baseline models in the past and hence makes it easy for a comparative basis.</P>
-<P class="p27 ft8"><SPAN class="ft1">3.4.3.</SPAN><SPAN class="ft9">M</SPAN>EMORY <SPAN class="ft1">F</SPAN>EEDBACK</P>
-<P class="p35 ft1">The memory of predictions for results of past games and the error in those predictions will be recurrently fed into our deep network as <NOBR>double-veriﬁcation</NOBR> (since our network performs two functions simultaneously).</P>
-<P class="p29 ft8"><SPAN class="ft1">3.4.4.</SPAN><SPAN class="ft9">P</SPAN>AST <SPAN class="ft1">P</SPAN>ERFORMANCE</P>
-<P class="p36 ft3">Currently, Random Forest &gt; Logistic Classiﬁer in terms of performance (ie it has a lower MAE). Hence, we aim to improve upon the MAE of the Random Forest while also using MSE as an additional testing measure.</P>
-<P class="p37 ft2">4. Potential Results and Conclusion</P>
-<P class="p38 ft1">4.1. Potential Results</P>
-<P class="p39 ft3">A bracket of playoff teams (generated in a visual form) would be an optimal representation of our results. This has been done in the past by various models and seems like a good baseline for our result representation. Our goal is to be able to use regular season win sums to predict the progression of the bracket through the NBA playoffs (predict the overall winner). A table/ranking column vector will also be a result we would like to display.</P>
-<P class="p40 ft6">Figure 2. Potential Visual Representation</P>
-<P class="p41 ft1">4.2. Conclusion</P>
-<P class="p42 ft4">The project’s success will deﬁnitely be measured based on how well our model can learn to predict results. However, the overarching goal of this project is to be able to come up with a more comprehensive result of statistical features that impact the outcome of a game. The usage of data as a basis for information is prevalent in sports. If we are able to identify a dataset of basketball counting statistics that can be said to span the most important features impacting winning, this would be a huge success. Apart from that, we hope to learn how to use and test various machine learning models to perform data analysis on sports results as an overall goal.</P>
-</DIV>
-</DIV>
-<DIV id="id2_3">
-</DIV>
-<DIV id="page_3">
-<DIV id="p3dimg1">
-<IMG src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAogDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/9k=" id="p3img1"></DIV>
+<p><a name="toc.4.2"><h2>4.2&nbsp;Baseline 2: Gradient Boosting</h2>
+For our second baseline, we chose to use gradient boosting, which is an ensemble tree learning method. Through this method, we combine a series of weak tree prediction models to create a strong learning model. This type of model helps mitigate the problem of overfitting data which can be particularly troublesome with historical training data sets which may have large variances.
+
+As opposed to the random forest model, boosting attacks the bias<font face=symbol>-</font>variance tradeoff by starting with weak models and sequentially boosts its performance by continuing to build new trees, where each new tree in the sequence tries to fix up where the previous one made the biggest mistakes. 
+
+<p><a name="toc.4.3"><h2>4.3&nbsp;Our Model: Feedforward Deep Neural Network</h2>
+The team<font face=symbol>¢</font>s rank will be classified via a feedforward deep neural network (DNN). The model will have 6 to 8 layers and consist of various layer types. Memory is important, as we will need to remember each individual game prediction and use it to base future predictions.
+
+<p><a name="toc.4.3.1"><h3>4.3.1&nbsp;Architecture of Memory</h3>
+\beginfigure[htp]
+    \centering
+     <font face=symbol>Î</font> cludegraphics[width=4cm]Memory Architecture.png
+    <font face=symbol>Ç</font>tionMemory in Memory Block
+    <a name="reffig:meminmem">
+
+\endfigure
+Instead of using a standard ST/LSTM unit, we will use a memory in memory unit, better for spatiotemporal predictions (our individual game predictions will need to be recorded based on both prediction space as well as time of prediction)
 
 
-<DIV id="id3_1">
-<P class="p43 ft6">Predicting the ranked NBA playoff bracket</P>
-<P class="p44 ft2">5. References</P>
-<P class="p45 ft3">Cheng, Ge, et al. “Predicting the Outcome of NBA Playoffs Based on the Maximum Entropy Principle.” Entropy, vol. 18, no. 12, 2016, p. 450., doi:10.3390/e18120450.</P>
-<P class="p46 ft1">Kohli, Ikjyot Singh. “Finding Common Charac- teristics Among NBA Playoff Teams: A Machine Learning Approach.” SSRN Electronic Journal, 2016, doi:10.2139/ssrn.2764396.</P>
-<P class="p47 ft4">Hu, Feifang, and James V. Zidek. “Forecasting NBA Basket- ball Playoff Outcomes Using the Weighted Likelihood.” In- stitute of Mathematical Statistics Lecture Notes - Mono- graph Series A Festschrift for Herman Rubin, 2004, pp. <NOBR>385–395.,</NOBR> doi:10.1214/lnms/1196285406.</P>
-<P class="p48 ft3">reHOOPerate. “NBA Neural Networks: Quantifying Playoff Performance by Number of Games Won and Seeding.” Medium, <NOBR>Re-HOOP*PER-Rate,</NOBR> 21 Aug. 2020, <NOBR>medium.com/re-hoop-per-rate/nba-neural-networks-</NOBR> <NOBR>quantifying-playoff-performance-by-number-of-games-</NOBR> <NOBR>won-and-seeding-9b8e9d2f6a55.</NOBR></P>
-</DIV>
-</BODY>
-</HTML>
+<p><a name="toc.4.4"><h2>4.4&nbsp;Performance Metrics/Loss Functions</h2>
+Recurrent unit is required within the deep neural network architecture for feedback from memory. Loss functions used will be two<font face=symbol>-</font>fold: 
+<p><a name="toc.4.4.1"><h3>4.4.1&nbsp;Mean<font face=symbol>-</font>Squared Error (MSE)</h3>
+Distance between our predicted outcome of a game and the ground truth of the actual result.
+<p><a name="toc.4.4.2"><h3>4.4.2&nbsp;Mean Average Error (MAE)</h3>
+Generally used as a variant of an error function for classification/regression problems. This has been used by our baseline models in the past and hence makes it easy for a comparative basis.
+<p><a name="toc.4.4.3"><h3>4.4.3&nbsp;Memory Feedback</h3>
+The memory of predictions for results of past games and the error in those predictions will be recurrently fed into our deep network as double<font face=symbol>-</font>verification (since our network performs two functions simultaneously).
+<p><a name="toc.4.4.4"><h3>4.4.4&nbsp;Rank Performance</h3>
+The final output of our prediction algorithm produces a ranked matrix ordered by the percentage of wins each team had during a particular season. In order to compare predicted ranked brackets to the true rank, we use the KendallTau statistic which outputs the association between two ranked lists. We can use this metric to evaluate the final result and give it a score.
+<p><a name="toc.4.4.5"><h3>4.4.5&nbsp;Past Performance</h3>
+Currently, we have a ceiling in terms of accuracy of NBA game prediction at 74\% which is referenced later in this paper. (done by a third party group and not our research group personally). The goal of this project is to see how utilizing unique datasets along with recurrent memory units with a deep neural network architecture can impact the performance of a model on NBA game predictions.
+
+<p><a name="toc.5"><h1>5&nbsp;Results and Conclusion</h1>
+<p><a name="toc.5.1"><h2>5.1&nbsp;Potential Results</h2>
+A bracket of playoff teams (generated in a visual form) would be an optimal representation of our results. This has been done in the past by various models and seems like a good baseline for our result representation. Our goal is to be able to use regular season win sums to predict the progression of the bracket through the NBA playoffs (predict the overall winner). A table/ranking column vector will also be a result we would like to display. 
+\beginfigure[htp]
+    \centering
+     <font face=symbol>Î</font> cludegraphics[width=6cm]nba<font face=symbol>-</font>playoff<font face=symbol>-</font>bracket<font face=symbol>-</font>2019<font face=symbol>-</font>finals<font face=symbol>-</font>ftrjpg<sub>g</sub>smlx0m6tqtn123yk70q2oab4.jpg
+    <font face=symbol>Ç</font>tionPotential Visual Representation
+    <a name="reffig:bracket">
+
+\endfigure
+
+<p><a name="toc.5.2"><h2>5.2&nbsp;Baseline 1 Results: Randomized Algorithm</h2>
+As is expected, we reported that during each season, the outcomes of games were classified correctly roughly 50\% of the time each season.
+
+We then took the simulated game data and ranked them according to the percentage of games each team won during the season. We then ran the Kendall Tau ranked order correlation statistic to determine the similarity between the ranked predictions and true rank from each season.
+
+The Kendall Tau statistic produces a result between [<font face=symbol>-</font>1, 1]. The closer to 1, the stronger the association between the two rankings, and the closer to <font face=symbol>-</font>1 is a negative association. We want our Kendall Tau statistic to be as close to 1 as possible. A reverse order is the worst possible arrangement, resulting in a score of <font face=symbol>-</font>1. The p<font face=symbol>-</font>value from Kendall Tau is a two sided p<font face=symbol>-</font>value where the hypothesis test is for a null hypothesis where there is no association between the ranked lists. We divide the p<font face=symbol>-</font>value by 2 because we<font face=symbol>¢</font>re only concerned with positive association.
+
+\begincenter
+ \begintabular||c c c|| 
+ \hline
+ Season & Ranked Correlation & p<font face=symbol>-</font>value <br>
+ [0.5ex] 
+ \hline\hline
+ 2018 & <font face=symbol>-</font>0.00229 & 0.5 <br>
+ 
+ \hline
+ 2019 & <font face=symbol>-</font>0.135 & 0.151 <br>
+
+ \hline
+ 2020 & <font face=symbol>-</font>0.0344 & 0.402<br>
+
+ \hline
+\endtabular
+\endcenter
+
+<p><a name="toc.5.2.1"><h3>5.2.1&nbsp;2018 Predicted Ranked Matrix</h3>
+ <font face=symbol>Î</font> cludegraphics[scale=0.15]images/2018<sub>p</sub>redicted<sub>r</sub>anked<font face=symbol>-</font>random.png
+<p><a name="toc.5.2.2"><h3>5.2.2&nbsp;2018 True Ranked Matrix</h3>
+ <font face=symbol>Î</font> cludegraphics[scale=0.15]images/2018<sub>t</sub>rue<sub>r</sub>anked<font face=symbol>-</font>random.png
+
+From these scores, we can see that the random algorithm was not very successful in creating any type of association between the predicted ranked list and the true ranked list. Since each correlation score is very close to zero and the p<font face=symbol>-</font>values are very high (0.5 is the max since we only consider the positive association), we can conclude that the randomized algorithm was not effective in creating correct predictions.
+
+
+<p><a name="toc.5.3"><h2>5.3&nbsp;Baseline 2 Results: Gradient Boosted Trees</h2>
+After cleaning the data, we trained the gradient boosting model with the following parameters using the BoostedTreesClassifier taken from the TensorFlow library.
+
+\begincenter
+ \begintabular||c c|| 
+ \hline
+ Parameter & Value <br>
+ [0.5ex] 
+ \hline\hline
+ n trees & 50 <br>
+ 
+ \hline
+ max depth & 3<br>
+
+ \hline
+ n batches per layer & 1 <br>
+
+ \hline
+\endtabular
+\endcenter
+
+This model was trained by taking data from previous seasons<font face=symbol>¢</font> overall team statistics and using this data to inform the next season<font face=symbol>¢</font>s predictions. Each game is simulated again, with the BoostedTreesClassifier evaluating the prediction for each game. Finally, each team is ranked based on its percentage of wins over the course of the season.
+
+The ranked matrix correlation scores are shown below, again calculated using the Kendall Tau algorithm.
+
+\begincenter
+ \begintabular||c c c|| 
+ \hline
+ Season & Ranked Correlation & p<font face=symbol>-</font>value <br>
+ [0.5ex] 
+ \hline\hline
+ 2018 & 0.172 & 0.099 <br>
+ 
+ \hline
+ 2019 & 0.0666 & 0.31 <br>
+
+ \hline
+ 2020 & 0.0437 & 0.325 <br>
+
+ \hline
+\endtabular
+\endcenter
+
+From the results for the gradient boosting algorithm, we can see a clear improvement over the randomized algorithm. While 2019 and 2020 don<font face=symbol>¢</font>t show as much of a positive association, we can see 2018 has a much higher correlation than seen with the random algorithm. Overall, we see that the gradient boosting algorithm was more successful in generating predictions.
+
+By analyzing the ranked matricies, we see there<font face=symbol>¢</font>s strong clustering, with the true winners of the season generally at the top of the bracket while the losers are at the bottom. While the ordering is not perfect, the clustering shows that there was a lot of association in the correlations.
+
+<p><a name="toc.5.3.1"><h3>5.3.1&nbsp;2018 Predicted Ranked Matrix</h3>
+ <font face=symbol>Î</font> cludegraphics[scale=0.15]images/2018<sub>p</sub>redicted<sub>r</sub>anked.png
+<p><a name="toc.5.3.2"><h3>5.3.2&nbsp;2018 True Ranked Matrix</h3>
+ <font face=symbol>Î</font> cludegraphics[scale=0.15]images/2018<sub>t</sub>rue<sub>r</sub>anked.png
+<p><a name="toc.5.3.3"><h3>5.3.3&nbsp;Performance Metrics for Model</h3>
+\begincenter
+ \begintabular||c c|| 
+ \hline
+ Metric & Value <br>
+ [0.5ex] 
+ \hline\hline
+ accuracy & 0.6538394, <br>
+ 
+ \hline
+ accuracy<font face=symbol>-</font>baseline & 0.5826744 <br>
+
+ \hline
+ auc & 0.68861175 <br>
+
+ \hline
+ auc<font face=symbol>-</font>precision<font face=symbol>-</font>recall & 0.74310637<br>
+ 
+ \hline
+ mean<font face=symbol>-</font>squared<font face=symbol>-</font>loss & 0.62664056 <br>
+
+ \hline
+ loss & 0.62664056 <br>
+
+ \hline
+ precision & 0.6760858 <br>
+
+ \hline
+\endtabular
+\endcenter
+
+Our accuracy and precision values are decently high for a task that is so random in its outcome, simply because of the relative equality of basketball teams. The overall highest ever accuracy for an NBA game prediction task is 74\% which was achieved by a Stanford paper. Our goal in this project is to get as close to, if not surpass, the accuracy of that paper while minimizing the loss of our predictions. The usage of recurrent memory in our predictions is hypothesized to have a positive impact which will be demonstrated in the final paper. 
+<p><a name="toc.5.4"><h2>5.4&nbsp;Conclusion</h2>
+The project<font face=symbol>¢</font>s success will definitely be measured based on how well our model can learn to predict results. However, the overarching goal of this project is to be able to come up with a more comprehensive result of statistical features that impact the outcome of a game. The usage of data as a basis for information is prevalent in sports. If we are able to identify a dataset of basketball counting statistics that can be said to span the most important features impacting winning, this would be a huge success. 
+
+So far, we<font face=symbol>¢</font>ve learned how to analyze a feature space and determine which features to utilize and have explored using a number of models to use for our baseline metric, such as the random forest and gradient boosting. Our first attempt with random forest showed poor performance results and through research we decided to use gradient boosting as a replacement.
+
+Continuing on with the semester, our goal is to utilize our analysis of the feature space and our baseline results to develop our deep learning model and memory unit that can outperform the baseline results.
+
+<p><a name="toc.6"><h1>6&nbsp;References</h1>
+Cheng, Ge, et al. “Predicting the Outcome of NBA Playoffs Based on the Maximum Entropy Principle.” Entropy, vol. 18, no. 12, 2016, p. 450., doi:10.3390/e18120450.
+
+Kohli, Ikjyot Singh. “Finding Common Characteristics Among NBA Playoff Teams: A Machine Learning Approach.” SSRN Electronic Journal, 2016, doi:10.2139/ssrn.2764396.
+
+Hu, Feifang, and James V. Zidek. “Forecasting NBA Basketball Playoff Outcomes Using the Weighted Likelihood.” Institute of Mathematical Statistics Lecture Notes <font face=symbol>-</font> Monograph Series A Festschrift for Herman Rubin, 2004, pp. 385–395., doi:10.1214/lnms/1196285406.
+
+reHOOPerate. “NBA Neural Networks: Quantifying Playoff Performance by Number of Games Won and Seeding.” Medium, Re<font face=symbol>-</font>HOOP*PER<font face=symbol>-</font>Rate, 21 Aug. 2020, medium.com/re<font face=symbol>-</font>hoop<font face=symbol>-</font>per<font face=symbol>-</font>rate/nba<font face=symbol>-</font>neural<font face=symbol>-</font>networks<font face=symbol>-</font>quantifying<font face=symbol>-</font>playoff<font face=symbol>-</font>performance<font face=symbol>-</font>by<font face=symbol>-</font>number<font face=symbol>-</font>of<font face=symbol>-</font>games<font face=symbol>-</font>won<font face=symbol>-</font>and<font face=symbol>-</font>seeding<font face=symbol>-</font>9b8e9d2f6a55. 
+\enddocument
+
+
+<hr>
+<p><h1>Table Of Contents</h1>
+<p><a href="#toc.1"><h1>1&nbsp;Introduction</h1></a>
+<p><a href="#toc.2"><h1>2&nbsp;Problem Definition</h1></a>
+<p><a href="#toc.2.1"><h2>2.1&nbsp;Application of Decision Tree and Ranking</h2></a>
+<p><a href="#toc.2.2"><h2>2.2&nbsp;Input Space</h2></a>
+<p><a href="#toc.2.3"><h2>2.3&nbsp;Output Space</h2></a>
+<p><a href="#toc.2.4"><h2>2.4&nbsp;Assumptions</h2></a>
+<p><a href="#toc.3"><h1>3&nbsp;Data</h1></a>
+<p><a href="#toc.3.1"><h2>3.1&nbsp;Collection</h2></a>
+<p><a href="#toc.3.2"><h2>3.2&nbsp;ANOVA (Analysis of Variance) Coefficient Analysis</h2></a>
+<p><a href="#toc.3.3"><h2>3.3&nbsp;Feature Importance from Gradient Boosting Model</h2></a>
+<p><a href="#toc.4"><h1>4&nbsp;Methods</h1></a>
+<p><a href="#toc.4.1"><h2>4.1&nbsp;Baseline 1: Randomized Algorithm</h2></a>
+<p><a href="#toc.4.2"><h2>4.2&nbsp;Baseline 2: Gradient Boosting</h2></a>
+<p><a href="#toc.4.3"><h2>4.3&nbsp;Our Model: Feedforward Deep Neural Network</h2></a>
+<p><a href="#toc.4.3.1"><h3>4.3.1&nbsp;Architecture of Memory</h3></a>
+<p><a href="#toc.4.4"><h2>4.4&nbsp;Performance Metrics/Loss Functions</h2></a>
+<p><a href="#toc.4.4.1"><h3>4.4.1&nbsp;Mean<font face=symbol>-</font>Squared Error (MSE)</h3></a>
+<p><a href="#toc.4.4.2"><h3>4.4.2&nbsp;Mean Average Error (MAE)</h3></a>
+<p><a href="#toc.4.4.3"><h3>4.4.3&nbsp;Memory Feedback</h3></a>
+<p><a href="#toc.4.4.4"><h3>4.4.4&nbsp;Rank Performance</h3></a>
+<p><a href="#toc.4.4.5"><h3>4.4.5&nbsp;Past Performance</h3></a>
+<p><a href="#toc.5"><h1>5&nbsp;Results and Conclusion</h1></a>
+<p><a href="#toc.5.1"><h2>5.1&nbsp;Potential Results</h2></a>
+<p><a href="#toc.5.2"><h2>5.2&nbsp;Baseline 1 Results: Randomized Algorithm</h2></a>
+<p><a href="#toc.5.2.1"><h3>5.2.1&nbsp;2018 Predicted Ranked Matrix</h3></a>
+<p><a href="#toc.5.2.2"><h3>5.2.2&nbsp;2018 True Ranked Matrix</h3></a>
+<p><a href="#toc.5.3"><h2>5.3&nbsp;Baseline 2 Results: Gradient Boosted Trees</h2></a>
+<p><a href="#toc.5.3.1"><h3>5.3.1&nbsp;2018 Predicted Ranked Matrix</h3></a>
+<p><a href="#toc.5.3.2"><h3>5.3.2&nbsp;2018 True Ranked Matrix</h3></a>
+<p><a href="#toc.5.3.3"><h3>5.3.3&nbsp;Performance Metrics for Model</h3></a>
+<p><a href="#toc.5.4"><h2>5.4&nbsp;Conclusion</h2></a>
+<p><a href="#toc.6"><h1>6&nbsp;References</h1></a>
+</body>
+</html>
