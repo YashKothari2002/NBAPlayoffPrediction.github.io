@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Predicting the ranked NBA playoff bracket</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <section id="header">
+      <div class="inner">
+        <span class="icon solid major fa-basketball-ball"></span>
+        <h1 style="font-size: 3em">
+          <strong>Predicting the Ranked NBA Playoff Bracket</strong>
+        </h1>
+        <p>
+          By: Pranav Putta, Yash Kothari, Lakshman Ravoori, and Connor Caldwell
+        </p>
+        <ul class="actions special">
+          <li>
+            <a
+              href="https://github.com/YashKothari2002/NBAPlayoffPrediction.github.io"
+              class="button"
+              >Github Repository</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <div class="col-6 col-12-medium">
+            <header class="major">
+              <h2>Abstract</h2>
+            </header>
+            <p>
+              This project aims to use a deep neural network to predict the NBA
+              playoffs' ranked bracket. The model will be tested against 2
+              baselines (gradient boosting and a randomized algorithm). The
+              majority of previous approaches to NBA predictions have been
+              focused on generating the playoff spread. This project
+              differentiates itself by focusing on the ranked bracket for the
+              playoffs. At the end of this project, we aim to be able to predict
+              the ranked bracket for the 2021 playoffs.
+            </p>
+          </div>
+          <div class="col-6 col-12-medium imp-medium">
+            <span class="image fit"><img src="images/nba.jpg" alt="" /></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <header class="major">
+            <h2>Introduction</h2>
+          </header>
+          <p>
+            The NBA is one of the top grossing sports in the United States,
+            bringing in over $8 billion in revenue per year. As such, sports
+            betting is a prominent aspect of American culture that engages
+            millions of people nationwide. Engineering a prediction algorithm
+            that can reliably produce insights about the outcomes of games would
+            be of significance to consumers, the NBA franchise, opposition team
+            analysis, and the gambling industry. As is common with any sport,
+            the NBA has a dense collection of data and statistics ranging from
+            points scored all the way to the number of blocks, assists, and
+            steals made by every player. The unpredictability of the NBA is very
+            likely due to our inability to accurately quantify players and
+            performance metrics on the field. Through this project, we hope to
+            understand which performance metrics and statistics are the major
+            contributors to the overall game outcome.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <header class="major">
+            <h2>Our Approach</h2>
+          </header>
+          <p>
+            Each individual basketball game over the course of an NBAseason can
+            be represented as a decision tree. There are’N’ number of input
+            features - counting statistics - that canbe traversed over to
+            eventually reach a binary outcome -Win for Team A or Win for Team B.
+            Taking the sum overall results over a season for an arbitrary team
+            ’A’, we canthen ”rank” teams in order of the number of total wins
+            theyaccumulate.
+          </p>
+          <p>
+            Input SpaceBasketball statistics data will be pulled from
+            basketball-reference.com and espn.com/basketball/stats.Unique
+            dataset will be created after performing statistical analysisof
+            correlation between various stats and the impact on teamwin. Final
+            dataset will be pre-processed using principalcomponent analysis
+            (PCA) and mean-centering to reducedimensionality.
+          </p>
+          <p>
+            Output Space: (x1, x2, x3, x4, x5, x6, x7, x8), (x1A, x2A, x3A, x4A,
+            x5A, x6A, x7a, x8A) 2x8 Dimensional Matrix - ranked from x1-x8 for
+            eachconference (east and west). We'll assume that team win
+            percentage is based solely on individual perfor-mances and
+            quantifiable statisticsb. Injuries to players unaccounted for
+            (pre-season predic-tions)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <div class="col-6 col-12-medium">
+            <header class="major">
+              <h2>Data Collection and Cleaning</h2>
+            </header>
+            <p>
+              To acquire the data, we decided to use data from ESPN and
+              Basketball Reference. ESPN is a popular cable sports channel and
+              Basketball Reference is one of the most popular databases for NBA
+              history. As both of these sources are known to be reputable, we
+              felt quite comfortable using them. Using Beautiful Soup python
+              library we decided to webscrape NBA Regular Season Team Statistics
+              and the NBA Playoffs Team Stats from the past 19 seasons
+              (2001-2002 season to the 2019-2020 season). Novelty lies in
+              combining the most impactful statistics on game results from
+              multiple sources. The data provided team statistics such as
+              3-point percentage, free-through percentage, points, assists,
+              steals, etc for each season.
+            </p>
+            <p>
+              In the images to the right, you can see our data cleaning process
+              using the Annova Correlation Coefficient to determine feature
+              importances and reduce dimensionality in order to use only the
+              most important features
+            </p>
+            <p>
+              We see that there is a F-test metric as well as a YES or NO binary
+              classification for whether a feature was selected for our training
+              (input) space or not. There is a way to threshold this F-metric to
+              either accept (take) or reject (not take) the null hypothesis from
+              the ANOVA test. Rejecting the null hypothesis indicates that
+              variance exists between the two groups which, for this paper, are
+              the feature (group 1) and the result of the game (group 2). A
+              value of the F-test above a given threshold means that we would
+              reject the null hypothesis for that particular feature and hence
+              make it a part of the data-set that we use to train the model.
+              This threshold is taken from the F-table, which is based on the
+              feature space, degrees of freedom, etc. We have taken our
+              threshold as 4.23 (derived from the F-table directly). The F-test
+              threshold has been taken from the ANOVA table, which includes a
+              value for significance above which features are statistically
+              important enough to be considered in our dataset (final dataset).
+            </p>
+          </div>
+          <div class="col-6 col-12-medium imp-medium">
+            <span class="image fit"
+              ><img src="images/violin.png" alt=""
+            /></span>
+            <span class="image fit"><img src="images/anova.png" alt="" /></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <header class="major">
+            <h2>Methods</h2>
+          </header>
+          <span class="image fit"><img src="images/methods.png" alt="" /></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <div class="col-6 col-12-medium">
+            <header class="major">
+              <h2>Performance Metrics</h2>
+            </header>
+            <p>
+              Mean-Squared-Error: Distance between our predicted outcome of a
+              game and the ground truth of the actual result.
+            </p>
+            <p>
+              Mean Average Error Generally used as a variant of an error
+              function for classification/regression problems. This has been
+              used by our baseline models in the past and hence makes it easy
+              for a comparative basis.
+            </p>
+
+            <p>
+              Memory Feedback:The memory of predictions for results of past
+              games and the error in those predictions will be recurrently fed
+              into our deep network as double-verification (since our network
+              performs two functions simultaneously).
+            </p>
+
+            <p>
+              Rank Performance: The final output of our prediction algorithm
+              produces a ranked matrix ordered by the percentage of wins each
+              team had during a particular season. In order to compare predicted
+              ranked brackets to the true rank, we use the KendallTau statistic
+              which outputs the association between two ranked lists. We can use
+              this metric to evaluate the final result and give it a score.
+            </p>
+          </div>
+          <div class="col-6 col-12-medium imp-medium">
+            <span class="image fit"
+              ><img src="images/violin.png" alt=""
+            /></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="main style1 special">
+      <div class="container">
+        <header class="major">
+          <h2>Results</h2>
+        </header>
+        <div class="row gtr-150">
+          <div class="col-4 col-12-medium">
+            <span class="image fit"
+              ><img src="images/2018true.png" alt=""
+            /></span>
+            <h3>True Results for 2018 Season</h3>
+            <ul class="actions special">
+              <li><a href="#" class="button">More</a></li>
+            </ul>
+          </div>
+          <div class="col-4 col-12-medium">
+            <span class="image fit"
+              ><img src="images/2018gb.png" alt=""
+            /></span>
+            <h3>Baseline 1: Gradient Boosting</h3>
+            <p>
+              Using 50 trees with a max depth of 3. We see good clustering at
+              the winners and losers of the season when comparing to the true
+              results. This shows that while the model wasn't very accurate at
+              predicting individual games, it did a decent job in identifying
+              the strong winners and losers of the game, and had trouble in
+              ranking those in the middle.
+            </p>
+            <strong>KendallTau: 0.17</strong>
+            <ul class="actions special">
+              <li><a href="#" class="button">More</a></li>
+            </ul>
+          </div>
+          <div class="col-4 col-12-medium">
+            <span class="image fit"
+              ><img src="images/2018rand.png" alt=""
+            /></span>
+            <h3>Baseline 2: Randomized Algorithm</h3>
+            <p>
+              We can see that compared to the gradient boosting model, the
+              randomized algorithm wasn't very good at predicting the ranked
+              bracket. This is promsing, showing that our algorithm is providing
+              a better than random result at predicting games based on past
+              historical data.
+            </p>
+            <strong>KendallTau: -0.0002</strong>
+
+            <ul class="actions special">
+              <li><a href="#" class="button">More</a></li>
+            </ul>
+          </div>
+          <div class="col-4 col-12-medium">
+            <span class="image fit"
+              ><img src="images/2018dnn.png" alt=""
+            /></span>
+            <h3>Our Model: Deep Neural Network</h3>
+            <p>
+              Our model performed significantly better than the previous two
+              baseline models, as can be seen by the Kendall Tau statistic,
+              showing a strong correlation between the ranking that we produced
+              using the deep neural network and the true result. Comapred to the
+              previous baselines, we performed significantly better.
+            </p>
+            <strong>KendallTau: 0.3</strong>
+
+            <ul class="actions special">
+              <li><a href="#" class="button">More</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <div class="col-6 col-12-medium">
+            <header class="major">
+              <h2>Future Work and Conclusion</h2>
+            </header>
+            <p>
+              Utilizing grid search to fine-tune the hyper parameters forthe
+              model is one area of improvement that can be made -which could
+              potentially boost the performance of the modelfurther.
+              Additionally, augmenting the data set with individ-ual player data
+              that rolls over as rosters change within theNBA is a potential
+              area of focus for further work, giventhat the impact of changing
+              rosters on wins/losses is sig-nificant as it can potentially
+              strengthen or weaken a teamsignificantly. Additionally, some
+              further predictions shouldbe made with this model (ie it should be
+              tested on futureseasons) to ensure that our accuracy/results are
+              not due toany kind of over-fitting for a particular type of
+              season. Fur-thermore, there can be more feature pruning done to
+              removesome redundant/non-independent features from the data setas
+              well, or some form of feature weighting to be done
+              withinpre-processing the data
+            </p>
+            <p>
+              The project’s success was definitely measured based on how well
+              our model can learn to predict results. However,the overarching
+              goal of this project is to be able to come up with a more
+              comprehensive result of statistical featuresthat impact the
+              outcome of a game. The usage of data as abasis for information is
+              prevalent in sports. If we are able to identify a dataset of
+              basketball counting statistics thatcan be said to span the most
+              important features impacting winning, this would be a huge
+              success. Our first attempt with random forest showed poor
+              performance results andthrough research we decided to use gradient
+              boosting as a replacement. Through this project, we've learned how
+              to analyze and reduce the dimensionality of the feature space
+              using statistical techniques to recognize feature importances. We
+              were able to see a significant improvement of the NBA ranking from
+              the original randomized algorithm, showing that our algorithm was
+              indeed creating intelligent predictions past simply randomly
+              predictions. We were also able to understand and effictively
+              utilize appropriate metrics to analyze our findings. All these
+              skills have given us a strong foundation for approaching and
+              solving a machine learning problem.
+            </p>
+          </div>
+          <div class="col-6 col-12-medium imp-medium">
+            <span class="image fit"><img src="images/vis.png" alt="" /></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="one" class="main style1">
+      <div class="container">
+        <div class="row gtr-150">
+          <div class="col-6 col-12-medium">
+            <header class="major">
+              <h2>References</h2>
+            </header>
+            <p>
+              [1] Cheng, Ge, et al. “Predicting the Outcome of NBA Playoffs
+              Based on the Maximum Entropy Principle.” Entropy, vol. 18, no. 12,
+              2016, p. 450., doi:10.3390/e18120450.
+            </p>
+
+            <p>
+              [2] Kohli, Ikjyot Singh. “Finding Common Characteristics Among NBA
+              Playoff Teams: A Machine Learning Approach.” SSRN Electronic
+              Journal, 2016, doi:10.2139/ssrn.2764396.
+            </p>
+            <p>
+              [3] Hu, Feifang, and James V. Zidek. “Forecasting NBA Basketball
+              Playoff Outcomes Using the Weighted Likelihood.” Institute of
+              Mathematical Statistics Lecture Notes - Monograph Series A
+              Festschrift for Herman Rubin, 2004, pp. 385–395.,
+              doi:10.1214/lnms/1196285406.
+            </p>
+            <p>
+              [4] reHOOPerate. “NBA Neural Networks: Quantifying Playoff
+              Performance by Number of Games Won and Seeding.” Medium,
+              Re-HOOP*PER-Rate, 21 Aug. 2020,
+              medium.com/re-hoop-per-rate/nba-neural-networks-quantifying-playoff-performance-by-number-of-games-won-and-seeding-9b8e9d2f6a55.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <ul class="copyright">
+        <li>&copy; Untitled</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
