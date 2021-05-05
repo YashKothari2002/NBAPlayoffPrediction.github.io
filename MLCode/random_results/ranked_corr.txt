@@ -1,0 +1,19 @@
+percent_wins
+
+2018
+------------
+KendalltauResult(correlation=-0.0022988505747126436, pvalue=1.0)
+
+
+2019
+------------
+KendalltauResult(correlation=-0.13563218390804596, pvalue=0.303589884403213)
+
+
+2020
+------------
+KendalltauResult(correlation=-0.03448275862068966, pvalue=0.8044644884091301)
+
+
+
+Process finished with exit code 0
